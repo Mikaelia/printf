@@ -10,6 +10,4 @@ typedef struct op
 int print(char c);
 void printchar(va_list a);
 void printstring(va_list a);
-void printdigit(va_list a);
-void printint(va_list a);
 #endif

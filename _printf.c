@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 	ops printops[] = {
 		{"c", printchar},
 		{"s", printstring},
+		{"d", printdigit},
+		{"i", printint},
 		{NULL, NULL}
 	};
 
@@ -35,10 +37,12 @@ int _printf(const char *format, ...)
 					printops[j].f(arglist);
 					break;
 				}
+				j++;
 			}
 		}
 		else
 			print(format[i]);
 		i++;
 	}
+	return (0);
 }
