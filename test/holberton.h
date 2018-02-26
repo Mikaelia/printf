@@ -1,13 +1,23 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-int _printf(const char *format, ...);
 #include <stdarg.h>
+/**
+  * struct op - contains print operators
+  * @s: operator
+  * @f: print function
+  *
+  */
 typedef struct op
 {
 	char *s;
-	void (*f)(va_list a);
-}ops;
+	int (*f)(va_list a);
+} ops;
+int (*getopfunc(const char *format))(va_list a);
+int _printf(const char *format, ...);
 int print(char c);
-void printchar(va_list a);
-void printstring(va_list a);
+int printchar(va_list a);
+int printstring(va_list a);
+int printdigit(va_list a);
+int printint(va_list a);
+int printpercent(va_list a);
 #endif

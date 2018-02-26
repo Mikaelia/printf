@@ -47,8 +47,11 @@ int _printf(const char *format, ...)
 				}
 				j++;
 				if (printops[j].s == NULL)
+				{
 					print(format[--i]);
 					length++;
+				}
+
 			}
 
 		}
