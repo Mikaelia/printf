@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
+
 /**
   * printpercent - prints percent
   * @a: argument type
@@ -21,10 +22,23 @@ int printstring(va_list a)
 {
 	char *s;
 	int i;
+	char *n;
+
+	n = "(null)";
 
 	i = 0;
 
 	s = va_arg(a, char *);
+	if (!(s))
+	{
+		while (*n != '\0')
+		{
+			print(*n);
+			n++;
+		}
+		return (6);
+
+	}
 	while (s[i] != '\0')
 	{
 		print(s[i]);

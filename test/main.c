@@ -8,8 +8,24 @@ int main(void)
 	_printf("String:[%s]\n", "I am a string !");
 	printf("String:[%s]\n", "I am a string !");
 
+	
+	len = printf("String:[%s]\n", NULL);
+	len2 = _printf("String:[%s]\n", NULL);
+
+
+	_printf("Len:[%d]\n", len);
+    	printf("Len:[%d]\n",len2);
+
 	printf("Character:[%c]\n", 'H');
 	_printf("Character:[%c]\n", 'H');
+
+	
+	printf("Character NULL- real:[%c]\n", NULL);
+	_printf("Character NULL:[%c]\n", NULL);
+
+	
+	printf("integers passed to string- real:[%c]\n", '9');
+	_printf("integer passed to string  NULL:[%c]\n", '9');
 
 	_printf("Test positive:[%i]\n", 762534);
 	printf("REAL:[%i]\n", 762534);
@@ -17,8 +33,8 @@ int main(void)
 	_printf("Test negative:[%i]\n", -762534);
 	printf("REAL:[%i]\n", -762534);
 
-	_printf("Testprint Zero:[%i]\n", 0);
-        printf("REAL:[%i]\n", 0);
+	printf("Testprint NULL:[%d]\n", NULL);
+        _printf("REAL:[%d]\n", NULL);
 
 	 _printf("Unknown:[%r]\n");
 	 printf("Unknown:[%r]\n");
@@ -38,8 +54,12 @@ int main(void)
 	_printf("Empty string:[%s]\n", "");
 	printf("REAL:[%s]\n", "");
 
+	    len = _printf("Percent:[%%]\n");
+	        len2 = printf("Percent:[%%]\n");
 
-	_printf("Empty string:[%%%%%%s]\n", "String here");
-	printf("REAL:[%%%%%%s]\n", "String here");
+		 _printf("Len:[%d]\n", len);
+		     printf("Len:[%d]\n", len2);
+
+
 	return (0);
 }
