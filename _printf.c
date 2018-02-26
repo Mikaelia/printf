@@ -10,6 +10,7 @@
 int _printf(const char *format, ...)
 {
 	int i, j;
+	int length;
 
 	ops printops[] = {
 		{"c", printchar},
@@ -18,10 +19,11 @@ int _printf(const char *format, ...)
 		{"i", printint},
 		{NULL, NULL}
 	};
-
 	va_list arglist;
+
 	i = 0;
 	j = 0;
+	length = 0;
 
 	va_start(arglist, format);
 
@@ -34,15 +36,28 @@ int _printf(const char *format, ...)
 			{
 				if (*(printops[j].s) == format[i])
 				{
-					printops[j].f(arglist);
+					length += printops[j].f(arglist);
+					break;
+				}
+				if (format[i] == '%')
+				{
+					print(format[i]);
+					length++;
 					break;
 				}
 				j++;
+				if (printops[j].s == NULL)
+					print(format[--i]);
+					length++;
 			}
+
 		}
 		else
+		{
 			print(format[i]);
+			length++;
+		}
 		i++;
 	}
-	return (0);
+	return (length);
 }
