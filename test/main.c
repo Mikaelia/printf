@@ -25,8 +25,8 @@ int main(void)
 	_printf("%s Passing in text after\n", NULL);
 	printf("%s passing in test after Real\n", NULL);
 
-	printf("%s\n", "banana");
-
+	_printf("%sa%\n", "banana");
+	printf("%sa%\n", "banana");
 
 
 printf("Testing NULL with digits and ints\n");
@@ -125,7 +125,18 @@ printf("Testing NULL with digits and ints\n");
 
 		 _printf("Len:[%d]\n", len);
 		     printf("Len:[%d]\n", len2);
+/* percent tests */
+	_printf("Edge Case: %%s multiple percents\n");
+	printf("REAL Eege Case: %%s multiple percents\n");
 
+	_printf("Edge Case: %  %  s multiple percents\n", "hi");
+	printf("REAL Edge Case: %  %  s multiple percents\n", "hi");
+
+	_printf("Edge Case: %     %   multiple percents\n");
+	printf("REAL Edge Case: %     %   multiple percents\n");
+
+	_printf("Edge Case: %     do multiple percents\n", 20);
+	printf("REAL Edge Case: %     do multiple percents\n", 20);
 
 	return (0);
 }

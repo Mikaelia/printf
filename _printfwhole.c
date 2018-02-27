@@ -35,6 +35,10 @@ int _printf(const char *format, ...)
 				i++;
 				while (printops[j].s != NULL)
 				{
+					while (format[i] == ' ')
+					{
+						i++;
+					}
 					if (*(printops[j].s) == format[i])
 					{
 						length += printops[j].f(arglist);
