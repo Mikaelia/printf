@@ -1,17 +1,5 @@
 #include "holberton.h"
 #include <stdarg.h>
-
-/**
-  * printpercent - prints percent
-  * @a: argument type
-  *
-  * Return: void
-  */
-int printpercent(va_list a)
-{
-	print(va_arg(a, int));
-	return (1);
-}
 /**
   * printstring - prints strings
   * @a: argument type

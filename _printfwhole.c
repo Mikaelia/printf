@@ -26,41 +26,43 @@ int _printf(const char *format, ...)
 	length = 0;
 
 	va_start(arglist, format);
-
-	while (format[i] != '\0')
+	if (format != NULL)
 	{
-		if (format[i] == '%')
+		while (format[i] != '\0')
 		{
-			i++;
-			while (printops[j].s != NULL)
+			if (format[i] == '%')
 			{
-				if (*(printops[j].s) == format[i])
+				i++;
+				while (printops[j].s != NULL)
 				{
-					length += printops[j].f(arglist);
-					break;
-				}
-				if (format[i] == '%')
-				{
-					print(format[i]);
-					length++;
-					break;
-				}
-				j++;
-				if (printops[j].s == NULL)
-				{
-					print(format[--i]);
-					length++;
+					if (*(printops[j].s) == format[i])
+					{
+						length += printops[j].f(arglist);
+						break;
+					}
+					if (format[i] == '%')
+					{
+						print(format[i]);
+						length++;
+						break;
+					}
+					j++;
+					if (printops[j].s == NULL)
+					{
+						print(format[--i]);
+						length++;
+					}
+
 				}
 
 			}
-
+			else
+			{
+				print(format[i]);
+				length++;
+			}
+			i++;
 		}
-		else
-		{
-			print(format[i]);
-			length++;
-		}
-		i++;
 	}
 	return (length);
 }
