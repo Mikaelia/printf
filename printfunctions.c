@@ -1,7 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "holberton.h"
-/**
+/*
   * printstring - prints strings
   * @a: argument type
   *
@@ -43,12 +43,8 @@ int printstring(va_list a)
   */
 int printchar(va_list a)
 {
-	char s;
 
-	s = va_arg(a, int);
-
-	print(s);
-
+	print(va_arg(a, int));
 	return (1);
 }
 /**
@@ -87,7 +83,10 @@ int printint(va_list a)
 		mult *= 10;
 		count++;
 	}
-	len = count;
+	if (num < 0)
+		len = count + 1;
+	else
+		len = count;
 	while (count > 1)
 	{
 		if ((n / mult) < 10)

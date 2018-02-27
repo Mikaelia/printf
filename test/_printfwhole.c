@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 		{"s", printstring},
 		{"d", printint},
 		{"i", printint},
+		{"%", printpercent},
 		{NULL, NULL}
 	};
 	va_list arglist;
@@ -55,18 +56,8 @@ int _printf(const char *format, ...)
 					j++;
 					if (printops[j].s == NULL)
 					{
-						if (format[--i] == ' ')
-						{
-							print('%');
-							print(' ');
-							length += 2;
-						}
-						else
-						{
-							print('%');
-							length++;
-						}
-
+						print(format[--i]);
+						length++;
 					}
 
 				}

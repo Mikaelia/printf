@@ -6,10 +6,10 @@
 int main(void)
 {
 
-	int len, len2;
+	int len, len2, x;
 
 	_printf("String:[%s%s]\n", "I am a string !", "string2");
-	printf("String:[%s %s]\n", "I am a string !", "string2");
+	printf("String:[%s%s]\n", "I am a string !", "string2");
 
 	_printf("%%%\n");
 	printf("%%%\n");
@@ -47,8 +47,11 @@ printf("Testing NULL with digits and ints\n");
 	printf("%i\n", -1005);
 
 
-	_printf("%c\n", -145);
-	printf("%c\n", -145);
+	len = _printf("%d\n", -145);
+	len2 = printf("%d\n", -145);
+
+	_printf("%d\n", len);
+	printf("%d\n", len2);
 
 
 	_printf("%c\n", 0);
@@ -156,13 +159,28 @@ printf("Testing NULL with digits and ints\n");
 
 	_printf("%d\n", 1024);
 	printf("%d\n", 1024);
-/*
-		for (x = -1000; x <= 1000; x++)
-		{
-			printf("d = %d i = %i\n", x,  x);
 
-			_printf("d = %d i = %i\n", x,  x);
+		for (x = -10; x <= 10; x++)
+		{
+			len2 = printf("d = %d i = %i\n", x,  x);
+			len = _printf("d = %d i = %i\n", x,  x);
+
+
+			_printf("%d\n", len);
+			printf("%d\n", len2);
+
+
 		}
-*/
+
+	len = _printf("%d\n", 1145);
+	len2 = printf("%d\n", 1145);
+
+	_printf("%d\n", len);
+	printf("%d\n", len2);
+	len = _printf("%d\n", -1145);
+	len2 = printf("%d\n", -1145);
+
+	_printf("%d\n", len);
+	printf("%d\n", len2);
 	return (0);
 }
