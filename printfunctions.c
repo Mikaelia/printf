@@ -62,9 +62,9 @@ int printint(va_list a)
 	int num;
 	int mult;
 	int count;
-	int numcopy;
+	unsigned int numcopy;
+	unsigned int n;
 	int len;
-	int t = 0;
 
 	num = va_arg(a, int);
 	mult = 1;
@@ -73,10 +73,14 @@ int printint(va_list a)
 	if (num < 0)
 	{
 		print ('-');
-		num = (num + 1) * -1;
-		t = 1;
+		n = num * -1;
+		numcopy = n;
 	}
-	numcopy = num;
+	else
+	{
+		n = num;
+		numcopy = num;
+	}
 	while (numcopy >= 10)
 	{
 		numcopy /= 10;
@@ -86,17 +90,17 @@ int printint(va_list a)
 	len = count;
 	while (count > 1)
 	{
-		if ((num / mult) < 10)
+		if ((n / mult) < 10)
 		{
-			print((num / mult + '0'));
+			print((n / mult + '0'));
 		}
 		else
 		{
-			print(((num / mult) % 10) + '0');
+			print(((n / mult) % 10) + '0');
 		}
 		count--;
 		mult /= 10;
 	}
-	print(num % 10 + t + '0');
+	print(n % 10 + '0');
 	return (len);
 }

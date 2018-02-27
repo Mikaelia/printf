@@ -43,8 +43,8 @@ printf("Testing NULL with digits and ints\n");
 
 	/* char tests */
 
-	_printf("%d\n", 105);
-	printf("%d\n", 105);
+	_printf("%i\n", -1005);
+	printf("%i\n", -1005);
 
 
 	_printf("%c\n", -145);
@@ -143,11 +143,11 @@ printf("Testing NULL with digits and ints\n");
 	printf("REAL Edge Case: %     do multiple percents\n", 20);
 /* number tests */
 
-	_printf("%i\n", INT_MAX);
-	printf("%d\n", INT_MAX);
-	
-	_printf("%i\n", INT_MIN);
-	printf("%d\n", INT_MIN);
+	len = _printf("%i\n", INT_MAX);
+	len2 = printf("%d\n", INT_MAX);
+
+	len = _printf("%i\n", INT_MIN);
+	len2 = printf("%d\n", INT_MIN);
 
 	
 	_printf("%i\n", 0);
@@ -156,6 +156,13 @@ printf("Testing NULL with digits and ints\n");
 
 	_printf("%d\n", 1024);
 	printf("%d\n", 1024);
+/*
+		for (x = -1000; x <= 1000; x++)
+		{
+			printf("d = %d i = %i\n", x,  x);
 
+			_printf("d = %d i = %i\n", x,  x);
+		}
+*/
 	return (0);
 }
