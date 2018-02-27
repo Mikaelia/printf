@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	ops printops[] = {
 		{"c", printchar},
 		{"s", printstring},
-		{"d", printdigit},
+		{"d", printint},
 		{"i", printint},
 		{NULL, NULL}
 	};

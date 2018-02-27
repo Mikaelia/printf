@@ -47,11 +47,8 @@ int printchar(va_list a)
 
 	s = va_arg(a, int);
 
-	if (s == '\0')
-		print(' ');
+	print(s);
 
-	else
-		print(s);
 	return (1);
 }
 /**
@@ -80,7 +77,7 @@ int printint(va_list a)
 		t = 1;
 	}
 	numcopy = num;
-	while (numcopy > 10)
+	while (numcopy >= 10)
 	{
 		numcopy /= 10;
 		mult *= 10;
@@ -94,54 +91,9 @@ int printint(va_list a)
 			print((num / mult + '0'));
 		}
 		else
-			print(((num / mult) % 10) + '0');
-		count--;
-		mult /= 10;
-	}
-	print(num % 10 + t + '0');
-	return (len);
-}
-/**
-  * printdigit - prints digits
-  * @a: argument passed in
-  *
-  * Return: void
-  */
-int printdigit(va_list a)
-{
-	int num;
-	int mult;
-	int count;
-	int numcopy;
-	int len;
-	int t = 0;
-
-	num = va_arg(a, int);
-	mult = 1;
-	count = 1;
-
-	if (num < 0)
-	{
-		print ('-');
-		num = (num + 1) * -1;
-		t = 1;
-	}
-	numcopy = num;
-	while (numcopy > 10)
-	{
-		numcopy /= 10;
-		mult *= 10;
-		count++;
-	}
-	len = count;
-	while (count > 1)
-	{
-		if ((num / mult) < 10)
 		{
-			print((num / mult + '0'));
-		}
-		else
 			print(((num / mult) % 10) + '0');
+		}
 		count--;
 		mult /= 10;
 	}
