@@ -4,14 +4,14 @@
 
 int main(void)
 {
+
 	int len, len2;
 
 	_printf("String:[%s%s]\n", "I am a string !", "string2");
 	printf("String:[%s %s]\n", "I am a string !", "string2");
 
-
-	_printf("String:[%s]\n", "The limits.h header determines various properties of the various variable types. The macros defined in this header, limits the values of various variable types like char, int and long.");
-	printf("String:[%s]\n", "The limits.h header determines various properties of the various variable types. The macros defined in this header, limits the values of various variable types like char, int and long.");
+	_printf("%%%\n");
+	printf("%%%\n");
 /*NULL tests */
 
 
@@ -58,8 +58,11 @@ printf("Testing NULL with digits and ints\n");
 	_printf("%s\n", NULL);
 	printf("%shi\n", NULL); /*throws segfault */
 
-	_printf("%c\n", NULL); /*noprint, newline */
-	printf("%c\n", NULL);
+	len = _printf("Mine[%c]\n", NULL); /*noprint, newline */
+	len2 = printf("REAL[%c]\n", NULL);
+
+	_printf("Length: %d\n", len);
+	printf("Length: %d\n", len2);
 
 
 	_printf("%i\n", NULL);
@@ -137,6 +140,9 @@ printf("Testing NULL with digits and ints\n");
 
 	_printf("Edge Case: %     do multiple percents\n", 20);
 	printf("REAL Edge Case: %     do multiple percents\n", 20);
+/* number tests */
 
+	_printf("%i\n", -2147483648);
+	_printf("%d\n", -2147483648);
 	return (0);
 }

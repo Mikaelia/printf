@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdarg.h>
+#include <stdio.h>
 /**
   * printstring - prints strings
   * @a: argument type
@@ -42,7 +43,15 @@ int printstring(va_list a)
   */
 int printchar(va_list a)
 {
-	print(va_arg(a, int));
+	char s;
+
+	s = va_arg(a, int);
+
+	if (s == '\0')
+		print(' ');
+
+	else
+		print(s);
 	return (1);
 }
 /**
@@ -58,6 +67,7 @@ int printint(va_list a)
 	int count;
 	int numcopy;
 	int len;
+	int t = 0;
 
 	num = va_arg(a, int);
 	mult = 1;
@@ -66,9 +76,9 @@ int printint(va_list a)
 	if (num < 0)
 	{
 		print ('-');
-		num *= -1;
+		num = (num + 1) * -1;
+		t = 1;
 	}
-
 	numcopy = num;
 	while (numcopy > 10)
 	{
@@ -77,7 +87,7 @@ int printint(va_list a)
 		count++;
 	}
 	len = (count);
-	while (count > 0)
+	while (count > 1)
 	{
 		if ((num / mult) < 10)
 		{
@@ -88,6 +98,7 @@ int printint(va_list a)
 		count--;
 		mult /= 10;
 	}
+	print(num % 10 + t + '0');
 	return (len);
 }
 /**
@@ -103,6 +114,7 @@ int printdigit(va_list a)
 	int count;
 	int numcopy;
 	int len;
+	int t = 0;
 
 	num = va_arg(a, int);
 	mult = 1;
@@ -111,9 +123,9 @@ int printdigit(va_list a)
 	if (num < 0)
 	{
 		print ('-');
-		num *= -1;
+		num = (num + 1) * -1;
+		t = 1;
 	}
-
 	numcopy = num;
 	while (numcopy > 10)
 	{
@@ -121,8 +133,8 @@ int printdigit(va_list a)
 		mult *= 10;
 		count++;
 	}
-	len = count;
-	while (count > 0)
+	len = (count);
+	while (count > 1)
 	{
 		if ((num / mult) < 10)
 		{
@@ -133,5 +145,6 @@ int printdigit(va_list a)
 		count--;
 		mult /= 10;
 	}
+	print(num % 10 + t + '0');
 	return (len);
 }
