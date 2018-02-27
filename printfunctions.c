@@ -1,7 +1,8 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "holberton.h"
-/*
+
+/**
   * printstring - prints strings
   * @a: argument type
   *
