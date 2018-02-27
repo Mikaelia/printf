@@ -1,3 +1,4 @@
+#include <limits.h>
 #include <stdio.h>
 #include "holberton.h"
 #include <stdlib.h>
@@ -142,7 +143,14 @@ printf("Testing NULL with digits and ints\n");
 	printf("REAL Edge Case: %     do multiple percents\n", 20);
 /* number tests */
 
-	_printf("%i\n", -2147483648);
-	_printf("%d\n", -2147483648);
+	_printf("%i\n", INT_MAX);
+	_printf("%d\n", INT_MAX);
+	
+	printf("%i\n", INT_MIN);
+	printf("%d\n", INT_MIN);
+
+	
+	_printf("%i\n", 0);
+	printf("%d\n", 0);
 	return (0);
 }

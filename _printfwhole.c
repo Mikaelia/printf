@@ -1,6 +1,6 @@
-#include "holberton.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include "holberton.h"
 /**
   * _printf - produces output according to a format
   * @format: character string with directives
