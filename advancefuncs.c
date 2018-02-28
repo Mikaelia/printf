@@ -14,7 +14,7 @@ int printrot13(va_list a)
 	int j;
 	char *s;
 	char *ns;
-	int count;
+	int count = 0;
 
 	char lower[27] = "abcdefghijklmABCDEFGHIJKLM";
 	char upper[27] = "nopqrstuvwxyzNOPQRSTUVWXYZ";
