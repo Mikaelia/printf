@@ -50,6 +50,7 @@ int printrot13(va_list a)
 		}
 	for (i = 0; ns[i] != '\0'; i++)
 		print(ns[i]);
+	free(ns);
 	return (i);
 }
 /**
