@@ -30,7 +30,7 @@ The repository contains the following files:
 ### Usage and Installation
 Clone the repository, compile with  by cloning the repository to a directory, then run the executable.
 ```
-$ git clone https://github.com/kevanlucc/printf.git
+$ git clone https://github.com/mikaelia/printf.git
 ```
 ### Compilation
 
