@@ -95,7 +95,7 @@ int revstring(va_list a)
 		j--;
 	}
 	free(ns);
-	return (count);
+	return (i);
 }
 /**
   * printbinary - prints unsigned ints to binary
