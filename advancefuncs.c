@@ -61,9 +61,7 @@ int printrot13(va_list a)
 int revstring(va_list a)
 {
 	char *s;
-	char *ns;
 	int i;
-	int j;
 	int count;
 
 	i = 0;
@@ -76,27 +74,13 @@ int revstring(va_list a)
 		i++;
 		count++;
 	}
-	ns = malloc(sizeof(char) * (count + 1));
-
-	if (s == NULL)
+	i--;
+	while (i >= 0)
 	{
-		return (0);
+		print(s[i]);
+		i--;
 	}
-
-	j = 0;
-	while (s[j] != '\0')
-	{
-		ns[j] = s[j];
-		j++;
-	}
-	j--;
-	while (j >= 0)
-	{
-		print(ns[j]);
-		j--;
-	}
-	free(ns);
-	return (i);
+	return (count);
 }
 /**
   * printbinary - prints unsigned ints to binary
