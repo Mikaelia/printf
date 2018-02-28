@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		{"d", printint},
 		{"i", printint},
 		{"b", printbinary},
+		{"r", revstring},
+		{"R", printrot13},
 		{NULL, NULL}
 	};
 	va_list arglist;
