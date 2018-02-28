@@ -10,23 +10,37 @@
   */
 int printbinary(va_list a)
 {
-
 	char *s;
 	int count;
-	unsigned int num;
+	unsigned int num, numcopy;
 	int i;
+	int c;
 
 	i = 0;
+	c = 1;
 	count = 0;
 
 	num = va_arg(a, int);
 
-	s = malloc(sizeof(int) * num);
+	numcopy = num;
+
+	while (numcopy > 0)
+	{
+		numcopy /= 2;
+		c++;
+	}
+
+	s = malloc(sizeof(unsigned int) * (c - 1));
+
 	if (s == NULL)
+	{
+		free(s);
 		return (0);
+	}
 	if (num == 0)
 	{
 		print(0 + '0');
+		free(s);
 		return (0);
 	}
 	while (num > 0)
@@ -44,7 +58,6 @@ int printbinary(va_list a)
 	}
 	free(s);
 	return (count);
-
 }
 
 /**
