@@ -89,6 +89,7 @@ int revstring(va_list a)
 		ns[j] = s[j];
 		j++;
 	}
+	j--;
 	while (j >= 0)
 	{
 		print(ns[j]);
