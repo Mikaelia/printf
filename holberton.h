@@ -18,4 +18,5 @@ int printchar(va_list a);
 int printstring(va_list a);
 int printint(va_list a);
 int printpercent(va_list a);
+int printbinary(va_list a);
 #endif

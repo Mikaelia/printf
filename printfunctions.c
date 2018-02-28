@@ -1,12 +1,57 @@
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "holberton.h"
+/**
+  * printbinary - prints unsigned ints to binary
+  * @a: argument type
+  *
+  * Return: length
+  */
+int printbinary(va_list a)
+{
+
+	char *s;
+	int count;
+	unsigned int num;
+	int i;
+
+	i = 0;
+	count = 0;
+
+	num = va_arg(a, int);
+
+	s = malloc(sizeof(int) * num);
+	if (s == NULL)
+		return (0);
+	if (num == 0)
+	{
+		print(0 + '0');
+		return (0);
+	}
+	while (num > 0)
+	{
+		s[i] = num % 2;
+		num /= 2;
+		i++;
+	}
+	i--;
+	count = i;
+	while (i >= 0)
+	{
+		print(s[i] + '0');
+		i--;
+	}
+	free(s);
+	return (count);
+
+}
 
 /**
   * printstring - prints strings
   * @a: argument type
   *
-  * Return: void
+  * Return: length
   */
 int printstring(va_list a)
 {
@@ -40,7 +85,7 @@ int printstring(va_list a)
   * printchar - prints chars
   * @a: argument type
   *
-  * Return: void
+  * Return: length
   */
 int printchar(va_list a)
 {
@@ -52,7 +97,7 @@ int printchar(va_list a)
   * printint - prints ints
   * @a: argument passed in
   *
-  * Return: void
+  * Return: length
   */
 int printint(va_list a)
 {
