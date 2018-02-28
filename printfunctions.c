@@ -3,6 +3,98 @@
 #include <stdlib.h>
 #include "holberton.h"
 /**
+ * printrot13 - entry point
+ *@s: pointer
+ * Return: s
+ */
+int printrot13(va_list a)
+{
+	int i;
+	int j;
+	char *s;
+	char *ns;
+	int count;
+
+	char lower[27] = "abcdefghijklmABCDEFGHIJKLM";
+	char upper[27] = "nopqrstuvwxyzNOPQRSTUVWXYZ";
+
+	s = va_arg(a, char *);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		count++;
+		i++;
+	}
+
+	ns = malloc(sizeof(char) * (count + 1));
+
+	if (ns == NULL)
+		return (0);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		ns[i] = s[i];
+		i++;
+	}
+
+	for (i = 0; ns[i] != '\0'; i++)
+		for (j = 0; j < 26; j++)
+		{
+			if (ns[i] == lower[j])
+			{
+				print((ns[i] += 13));
+			}
+			else if (ns[i] == upper[j])
+				print((ns[i] -= 13));
+		}
+	return (i);
+}
+/*
+  * revstring - prints unsigned ints to binary
+  * @a: argument type
+  *
+  * Return: length
+  */
+int revstring(va_list a)
+{
+	char *s;
+	char *ns;
+	int i;
+	int j;
+	int count;
+
+	i = 0;
+	count = 0;
+
+	s = va_arg(a, char *);
+
+	while (s[i] != '\0')
+	{
+		i++;
+		count++;
+	}
+	ns = malloc(sizeof(char) * (count + 1));
+
+	if (s == NULL)
+	{
+		return (0);
+	}
+
+	j = 0;
+	while (s[j] != '\0')
+	{
+		ns[j] = s[j];
+		j++;
+	}
+	while (j >= 0)
+	{
+		print(ns[j]);
+		j--;
+	}
+	free(ns);
+	return (count);
+}
+/**
   * printbinary - prints unsigned ints to binary
   * @a: argument type
   *
