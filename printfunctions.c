@@ -20,7 +20,7 @@ int printbinary(va_list a)
 	c = 1;
 	count = 0;
 
-	num = va_arg(a, int);
+	num = va_arg(a, unsigned int);
 
 	numcopy = num;
 
@@ -41,7 +41,7 @@ int printbinary(va_list a)
 	{
 		print(0 + '0');
 		free(s);
-		return (0);
+		return (1);
 	}
 	while (num > 0)
 	{
@@ -49,8 +49,8 @@ int printbinary(va_list a)
 		num /= 2;
 		i++;
 	}
-	i--;
 	count = i;
+	i--;
 	while (i >= 0)
 	{
 		print(s[i] + '0');
