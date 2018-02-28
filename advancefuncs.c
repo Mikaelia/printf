@@ -43,11 +43,13 @@ int printrot13(va_list a)
 		{
 			if (ns[i] == lower[j])
 			{
-				print((ns[i] += 13));
+				ns[i] += 13;
 			}
 			else if (ns[i] == upper[j])
-				print((ns[i] -= 13));
+				ns[i] -= 13;
 		}
+	for (i = 0; ns[i] != '\0'; i++)
+		print(ns[i]);
 	return (i);
 }
 /**
