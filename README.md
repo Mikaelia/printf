@@ -51,15 +51,16 @@ Hello World
 $
 ```
 ###### Key:
+
 % +
 
-c - char
-d - digit
-i - integers
-b - binary
-s - string
-r - reverse string
-R - rot13 string
+- c - char
+- d - digit
+- i - integers
+- b - binary
+- s - string
+- r - reverse string
+- R - rot13 string
 
 ###  Roadmap 
 
