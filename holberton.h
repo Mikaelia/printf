@@ -2,8 +2,8 @@
 #define HOLBERTON_H
 #include <stdarg.h>
 /**
-  * struct op - contains print operators
-  * @s: operator
+  * struct op - contains print operators and their correspong functions
+  * @s: print operator
   * @f: print function
   *
   */

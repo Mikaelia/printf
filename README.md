@@ -1,45 +1,47 @@
 # Printf
 ### Description
-This is a homemade version of printf that prints strings, characters and numbers.
+
+_printf is a custom implementation of the C programming function printf. This homemade version of printf prints strings, characters and numbers. It will print a reversed string, numbers in binary, and will also encode strings in rot13.
 
 ### Environment
-Our printf function was developed and tested on `Ubuntu 14.04 LTS` via Vagrant in VirtualBox.
+Our printf program was developed and tested with `Ubuntu 14.04 LTS`
 
 ### File Contents
-The repository contains the following files:
+The repository consists of the following files:
 
 |   **File**   |   **Description**   |
 | -------------- | --------------------- |
 | \_printf.c | The printf function |
-| holberton.h   | Header file containing all function prototypes and struct declaration |
-| advancedfuncs.c | File containing extra print functions |
-| printfunctions.c  | File containing all print functions |
+| holberton.h   | Header file containing all function prototypes and struct declarations |
+| printfunctions.c  | File containing main print functions |
+| advancedfuncs.c | File containing additional print functions |
 
 ### Function Descriptions
-
 | **Function** | **Description** |
 | -------------- | ----------------- |
 |int print(char c)| Writes a character to stdout|
-|int printstring(va_list list)|prints strings|
-|int printchar(va_list list)|prints a character|
-|int printint(va_list list)|prints integers|
-|int printbinary(va_list)|prints numbers in binary|
-|int printrev(va_list list)|prints a reverse string|
-|int printrot13(va_list)|prints strings in rot13|
+|int printstring(va_list list)|Prints strings|
+|int printchar(va_list list)|Prints a character|
+|int printint(va_list list)|Prints integers|
+|int printbinary(va_list)|Prints numbers in binary|
+|int printrev(va_list list)|Prints a reverse string|
+|int printrot13(va_list)|Prints strings in rot13|
 
 ### Usage and Installation
-Clone the repository, compile with  by cloning the repository to a directory, then run the executable.
+Clone the repository, create a main.c file, compile, and run the executable.
 ```
 $ git clone https://github.com/mikaelia/printf.git
 ```
 ### Compilation
 
-This code was compiled with the following flags:
+This code was compiled as follows:
 ` $ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c -o printf `
 
-###### Example code
+###### Example main.c and output
 
 ```
+#include "holberton.h"
+
 int main(void)
 {
 	_printf("Hello %s\n", "World");
@@ -50,19 +52,24 @@ $ ./printf
 Hello World
 $
 ```
+###### Key:
+
+% +
+
+- c - char
+- d - digit
+- i - integers
+- b - binary
+- s - string
+- r - reverse string
+- R - rot13 string
 
 ###  Roadmap 
 
-Adding more format modifiers:
-* r
-* R
-* b
+Adding additional print functionality
 
 ### Authors
 
 * [**Mikaela Gurney**](https://github.com/Mikaelia)
 * [**Leon Cheung**](https://github.com/HiddenJem245)
 
-<p align="center">
-<a href="https://www.holbertonschool.com"><img src="https://intranet.hbtn.io/assets/holberton-logo-simplified-d4e8a1e8bf5ad93c8c3ce32895b4b53749b477b7ba7342d7f064e6883bcd3be2.png"></a>
-</p>
