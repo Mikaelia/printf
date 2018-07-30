@@ -28,7 +28,7 @@ The repository consists of the following files:
 |int printrot13(va_list)|Prints strings in rot13|
 
 ### Usage and Installation
-Clone the repository, compile, and run the executable.
+Clone the repository, create a main.c file, compile, and run the executable.
 ```
 $ git clone https://github.com/mikaelia/printf.git
 ```
@@ -37,9 +37,11 @@ $ git clone https://github.com/mikaelia/printf.git
 This code was compiled as follows:
 ` $ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c -o printf `
 
-###### Example code
+###### Example main.c and output
 
 ```
+#include "holberton.h"
+
 int main(void)
 {
 	_printf("Hello %s\n", "World");
