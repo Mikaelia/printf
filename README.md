@@ -9,7 +9,7 @@ Clone the repository, and create a main.c file, compile, and run the executable.
 ```
 $ git clone https://github.com/mikaelia/printf.git
 ```
-###### Example main.c and output
+#### Example main.c and output
 ```
 #include "holberton.h"
 
@@ -25,7 +25,7 @@ $ Hello World
 $
 ```
 
-###### Key:
+#### Key:
 
 % +
 
@@ -57,10 +57,6 @@ The repository consists of the following files:
 |int printbinary(va_list)|Prints numbers in binary|
 |int printrev(va_list list)|Prints a reverse string|
 |int printrot13(va_list)|Prints strings in rot13|
-
-###  Roadmap 
-
-Adding additional print functionality
 
 ### Authors
 
