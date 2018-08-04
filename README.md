@@ -1,10 +1,10 @@
 # Printf
 > _printf is a custom implementation of the native C printf function. This version of printf prints strings, characters and numbers. It will print a reversed string, numbers in binary, and will also encode strings in rot13.
 
-### Environment
+## Environment
 Printf was developed and tested with `Ubuntu 14.04 LTS`
 
-### Installing/ Getting Started
+## Installing/ Getting Started
 Clone the repository, and create a main.c file, compile, and run the executable.
 ```
 $ git clone https://github.com/mikaelia/printf.git
@@ -37,7 +37,7 @@ $
 - r - reverse string
 - R - rot13 string
 
-### File Contents
+## File Contents
 The repository consists of the following files:
 
 |   **File**   |   **Description**   |
@@ -47,7 +47,7 @@ The repository consists of the following files:
 | printfunctions.c  | File containing main print functions |
 | advancedfuncs.c | File containing additional print functions |
 
-### Function Descriptions
+## Function Descriptions
 | **Function** | **Description** |
 | -------------- | ----------------- |
 |int print(char c)| Writes a character to stdout|
