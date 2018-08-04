@@ -37,8 +37,7 @@ $
 - r - reverse string
 - R - rot13 string
 
-## File Contents
-The repository consists of the following files:
+### File Contents
 
 |   **File**   |   **Description**   |
 | -------------- | --------------------- |
@@ -47,7 +46,7 @@ The repository consists of the following files:
 | printfunctions.c  | File containing main print functions |
 | advancedfuncs.c | File containing additional print functions |
 
-## Function Descriptions
+### Function Descriptions
 | **Function** | **Description** |
 | -------------- | ----------------- |
 |int print(char c)| Writes a character to stdout|
