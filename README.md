@@ -46,7 +46,7 @@ $
 | printfunctions.c  | File containing main print functions |
 | advancedfuncs.c | File containing additional print functions |
 
-### Function Descriptions
+## Function Descriptions
 | **Function** | **Description** |
 | -------------- | ----------------- |
 |int print(char c)| Writes a character to stdout|
