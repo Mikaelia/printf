@@ -37,7 +37,7 @@ $
 - r - reverse string
 - R - rot13 string
 
-### File Contents
+## File Contents
 
 |   **File**   |   **Description**   |
 | -------------- | --------------------- |
